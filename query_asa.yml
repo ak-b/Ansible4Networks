@@ -1,0 +1,16 @@
+---
+- name: EXTRACT EXISTING ASA CONFIGURATION FROM NSO AND RECORD
+  hosts: 
+    - localhost
+  gather_facts: no
+  connection: local
+
+  roles:
+    - ops_show_state
+    - ops_show_cpu
+    - ops_show_context
+    - ops_show_block 
+    - ops_show_capture
+    - ops_show_asp_drop
+    - ops_show_svc_policy
+    
