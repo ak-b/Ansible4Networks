@@ -1,0 +1,386 @@
+clear ansible-playbook query_asa.yml -vvls[Kcd nso-ans-qa-wkbkpwd[Kcd nso-ansible-qa-wkbkls[Kpwdcd nso-ansible-qa-wkbkls[Kpwd[1Plscd nso-ansible-qa-wkbkpwd[K[1Plscd nso-ansible-qa-wkbkpwd[Kcd nso-ans-qa-wkbkls[Kansible-playbook query_asa.yml -vvclear [Kansible-playbook query_asa.yml -vv
+[0;34mansible-playbook 2.6.0[0m
+[0;34m  config file = /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/ansible.cfg[0m
+[0;34m  configured module search path = [u'/Users/akbansal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/ansible[0m
+[0;34m  executable location = /Library/Frameworks/Python.framework/Versions/2.7/bin/ansible-playbook[0m
+[0;34m  python version = 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 12:01:12) [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)][0m
+[0;34mUsing /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/ansible.cfg as config file[0m
+
+PLAYBOOK: query_asa.yml ***********************************************************************************************************************
+[0;34m1 plays in query_asa.yml[0m
+
+PLAY [RUNNING HEALTH-CHECK COMMANDS FROM NSO] *************************************************************************************************
+[0;34mMETA: ran handlers[0m
+
+TASK [ops_show_state : SHOW FAILOVER STATE FROM NSO] ******************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_state/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m  [0m
+[0;33m                     State          Last Failure Reason      Date/Time[0m
+[0;33m      This host  -   Primary[0m
+[0;33m                     Active         Ifc Failure              14:20:19 UTC Aug 24 2018[0m
+[0;33m      Other host -   Secondary[0m
+[0;33m                     Standby Ready  None[0m
+[0;33m  [0m
+[0;33m      ====Configuration State===[0m
+[0;33m              Sync Done - STANDBY[0m
+[0;33m      ====Communication State===[0m
+[0;33m              Mac set[0m
+[0;33m  [0m
+[0;33m      sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_state : debug] *****************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_state/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results4.output.result: |2-[0m
+[0;32m  [0m
+[0;32m  [0m
+[0;32m                   State          Last Failure Reason      Date/Time[0m
+[0;32m    This host  -   Primary[0m
+[0;32m                   Active         Ifc Failure              14:20:19 UTC Aug 24 2018[0m
+[0;32m    Other host -   Secondary[0m
+[0;32m                   Standby Ready  None[0m
+[0;32m  [0m
+[0;32m    ====Configuration State===[0m
+[0;32m            Sync Done - STANDBY[0m
+[0;32m    ====Communication State===[0m
+[0;32m            Mac set[0m
+[0;32m  [0m
+[0;32m    sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_cpu : SHOW CPU FROM NSO] *******************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_cpu/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m      CPU utilization for 5 seconds = 1%; 1 minute: 1%; 5 minutes: 1%[0m
+[0;33m      sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_cpu : debug] *******************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_cpu/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results1.output:[0m
+[0;32m    result: |2-[0m
+[0;32m  [0m
+[0;32m      CPU utilization for 5 seconds = 1%; 1 minute: 1%; 5 minutes: 1%[0m
+[0;32m      sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_context : SHOW CONTEXT FROM NSO] ***********************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_context/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m      Context Name      Class                Interfaces           Mode         URL[0m
+[0;33m      *Management       default              Management0/0        Transparent  disk0:/Management[0m
+[0;33m       Infra2           default              TenGigabitEthernet0/6.900, Transparent  disk0:/infra2.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.901[0m
+[0;33m       OpenStackPOC     default              TenGigabitEthernet0/6.1500, Transparent  disk0:/openstackpoc.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.1501[0m
+[0;33m       MediaQA          default              TenGigabitEthernet0/6.1600, Transparent  disk0:/MediaQA.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.1601[0m
+[0;33m       Tricon           default              TenGigabitEthernet0/6.201, Transparent  disk0:/Tricon.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.202[0m
+[0;33m       Core             default              TenGigabitEthernet0/6.101, Transparent  disk0:/Core.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.102[0m
+[0;33m       dc-mgmt          default              TenGigabitEthernet0/6.3900, Transparent  disk0:/dc-mgmt.cfg[0m
+[0;33m                                             TenGigabitEthernet0/7.3901[0m
+[0;33m  [0m
+[0;33m      Total active Security Contexts: 7[0m
+[0;33m      sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_context : DEBUG LISTED CONTEXTS ON ASA(FROM NSO)] ******************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_context/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results2.output.result: |2-[0m
+[0;32m  [0m
+[0;32m    Context Name      Class                Interfaces           Mode         URL[0m
+[0;32m    *Management       default              Management0/0        Transparent  disk0:/Management[0m
+[0;32m     Infra2           default              TenGigabitEthernet0/6.900, Transparent  disk0:/infra2.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.901[0m
+[0;32m     OpenStackPOC     default              TenGigabitEthernet0/6.1500, Transparent  disk0:/openstackpoc.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.1501[0m
+[0;32m     MediaQA          default              TenGigabitEthernet0/6.1600, Transparent  disk0:/MediaQA.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.1601[0m
+[0;32m     Tricon           default              TenGigabitEthernet0/6.201, Transparent  disk0:/Tricon.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.202[0m
+[0;32m     Core             default              TenGigabitEthernet0/6.101, Transparent  disk0:/Core.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.102[0m
+[0;32m     dc-mgmt          default              TenGigabitEthernet0/6.3900, Transparent  disk0:/dc-mgmt.cfg[0m
+[0;32m                                           TenGigabitEthernet0/7.3901[0m
+[0;32m  [0m
+[0;32m    Total active Security Contexts: 7[0m
+[0;32m    sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_context : CONVERTING AVAILABLE CONTEXTS ON ASA TO YAML] ************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_context/tasks/main.yml:16[0m
+[0;32mok: [localhost] => changed=false [0m
+[0;32m  ansible_facts:[0m
+[0;32m    contexts: |-[0m
+[0;32m      result: |2-[0m
+[0;32m  [0m
+[0;32m        Context Name      Class                Interfaces           Mode         URL[0m
+[0;32m        *Management       default              Management0/0        Transparent  disk0:/Management[0m
+[0;32m         Infra2           default              TenGigabitEthernet0/6.900, Transparent  disk0:/infra2.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.901[0m
+[0;32m         OpenStackPOC     default              TenGigabitEthernet0/6.1500, Transparent  disk0:/openstackpoc.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.1501[0m
+[0;32m         MediaQA          default              TenGigabitEthernet0/6.1600, Transparent  disk0:/MediaQA.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.1601[0m
+[0;32m         Tricon           default              TenGigabitEthernet0/6.201, Transparent  disk0:/Tricon.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.202[0m
+[0;32m         Core             default              TenGigabitEthernet0/6.101, Transparent  disk0:/Core.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.102[0m
+[0;32m         dc-mgmt          default              TenGigabitEthernet0/6.3900, Transparent  disk0:/dc-mgmt.cfg[0m
+[0;32m                                               TenGigabitEthernet0/7.3901[0m
+[0;32m  [0m
+[0;32m        Total active Security Contexts: 7[0m
+[0;32m        sjc02-wxqa-asa01#[0m
+
+TASK [ops_show_context : WRITE THE EXTRACTED CONTEXT INFORMATION TO FILE] *********************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_context/tasks/main.yml:20[0m
+[0;32mok: [localhost -> localhost] => changed=false [0m
+[0;32m  checksum: 0bb5c7ec758b8949b8642078dbb6608592e717fa[0m
+[0;32m  dest: ./host_vars/context/test.yml[0m
+[0;32m  gid: 20[0m
+[0;32m  group: staff[0m
+[0;32m  mode: '0777'[0m
+[0;32m  owner: akbansal[0m
+[0;32m  path: ./host_vars/context/test.yml[0m
+[0;32m  size: 1250[0m
+[0;32m  state: file[0m
+[0;32m  uid: 502[0m
+
+TASK [ops_show_block : SHOW BLOCK FROM NSO] ***************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_block/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m        SIZE    MAX    LOW    CNT  INUSE   HIGH[0m
+[0;33m           0   8700   8682   8700      0      0[0m
+[0;33m           4   1700   1699   1699      0      0[0m
+[0;33m          80   9000   8923   9000      0      8[0m
+[0;33m         256   9164   7310   9158      3     12[0m
+[0;33m        1550  36174  35816  36166      0      3[0m
+[0;33m        2048  20000  19999  20000      0      0[0m
+[0;33m        2560   8192   8187   8192      0      0[0m
+[0;33m        4096    100    100    100      0      0[0m
+[0;33m        8192    100    100    100      0      0[0m
+[0;33m        9344    100    100    100      0      0[0m
+[0;33m       16384    300    300    300      0      0[0m
+[0;33m      sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_block : debug] *****************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_block/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results3.output.result: |2-[0m
+[0;32m  [0m
+[0;32m      SIZE    MAX    LOW    CNT  INUSE   HIGH[0m
+[0;32m         0   8700   8682   8700      0      0[0m
+[0;32m         4   1700   1699   1699      0      0[0m
+[0;32m        80   9000   8923   9000      0      8[0m
+[0;32m       256   9164   7310   9158      3     12[0m
+[0;32m      1550  36174  35816  36166      0      3[0m
+[0;32m      2048  20000  19999  20000      0      0[0m
+[0;32m      2560   8192   8187   8192      0      0[0m
+[0;32m      4096    100    100    100      0      0[0m
+[0;32m      8192    100    100    100      0      0[0m
+[0;32m      9344    100    100    100      0      0[0m
+[0;32m     16384    300    300    300      0      0[0m
+[0;32m    sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_capture : SHOW CAPTURE INFORMATION FROM NSO] ***********************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_capture/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m      sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_capture : debug] ***************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_capture/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results5.output.result: |2-[0m
+[0;32m  [0m
+[0;32m    sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_asp_drop : SHOW ASP DROP INFORMATION FROM NSO] *********************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_asp_drop/tasks/main.yml:4[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m  [0m
+[0;33m      Frame drop:[0m
+[0;33m        Invalid TCP Length (invalid-tcp-hdr-length)                               5137[0m
+[0;33m        Invalid UDP Length (invalid-udp-length)                                      1[0m
+[0;33m        No valid adjacency (no-adjacency)                                        14129[0m
+[0;33m        No route to host (no-route)                                                 11[0m
+[0;33m        Flow is denied by configured rule (acl-drop)                          51923811[0m
+[0;33m        First TCP packet not SYN (tcp-not-syn)                                 5010482[0m
+[0;33m        Bad TCP flags (bad-tcp-flags)                                            28106[0m
+[0;33m        TCP data send after FIN (tcp-data-past-fin)                                 12[0m
+[0;33m        TCP failed 3 way handshake (tcp-3whs-failed)                             50220[0m
+[0;33m        TCP RST/FIN out of order (tcp-rstfin-ooo)                              1359436[0m
+[0;33m        TCP SEQ in SYN/SYNACK invalid (tcp-seq-syn-diff)                          2907[0m
+[0;33m        TCP packet SEQ past window (tcp-seq-past-win)                             9277[0m
+[0;33m        TCP invalid ACK (tcp-invalid-ack)                                           22[0m
+[0;33m        TCP RST/SYN in window (tcp-rst-syn-in-win)                                 266[0m
+[0;33m        TCP packet failed PAWS test (tcp-paws-fail)                                316[0m
+[0;33m        Connection limit reached (conn-limit)                                       16[0m
+[0;33m        CTM returned error (ctm-error)                                               8[0m
+[0;33m        Slowpath security checks failed (sp-security-failed)                      1152[0m
+[0;33m        Dropped by standby unit (fo-standby)                                     66148[0m
+[0;33m        Dst MAC L2 Lookup Failed (dst-l2_lookup-fail)                             6000[0m
+[0;33m        L2 Src/Dst same LAN port (l2_same-lan-port)                                  9[0m
+[0;33m        ICMP Inspect bad icmp code (inspect-icmp-bad-code)                           3[0m
+[0;33m        ICMP Inspect seq num not matched (inspect-icmp-seq-num-not-matched)          9[0m
+[0;33m        ICMP Error Inspect no existing conn (inspect-icmp-error-no-existing-conn)                                   234[0m
+[0;33m        FP L2 rule drop (l2_acl)                                               2532431[0m
+[0;33m        Unable to obtain connection lock (connection-lock)                           4[0m
+[0;33m        Interface is down (interface-down)                                         209[0m
+[0;33m        No management IP address configured for TFW (tfw-no-mgmt-ip-config)         14[0m
+[0;33m        Dropped pending packets in a closed socket (np-socket-closed)              419[0m
+[0;33m        IPv6 slowpath security checks failed (ipv6-sp-security-failed)               3[0m
+[0;33m        Connection to PAT address without pre-existing xlate (nat-no-xlate-to-pat-pool)                           23004[0m
+[0;33m        Received a multicast packet in the non-active device (mcast-in-nonactive-device)                            631[0m
+[0;33m  [0m
+[0;33m      Last clearing: Never[0m
+[0;33m  [0m
+[0;33m      Flow drop:[0m
+[0;33m        NAT reverse path failed (nat-rpf-failed)                                 34544[0m
+[0;33m        Inspection failure (inspect-fail)                                      2438126[0m
+[0;33m        SSL bad record detected (ssl-bad-record-detect)                             40[0m
+[0;33m        SSL handshake failed (ssl-handshake-failed)                                301[0m
+[0;33m        SSL record decryption failed (ssl-record-decrypt-error)                      8[0m
+[0;33m  [0m
+[0;33m      Last clearing: Never[0m
+[0;33m      sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_asp_drop : debug] **************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_asp_drop/tasks/main.yml:13[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results6.output.result: |2-[0m
+[0;32m  [0m
+[0;32m  [0m
+[0;32m    Frame drop:[0m
+[0;32m      Invalid TCP Length (invalid-tcp-hdr-length)                               5137[0m
+[0;32m      Invalid UDP Length (invalid-udp-length)                                      1[0m
+[0;32m      No valid adjacency (no-adjacency)                                        14129[0m
+[0;32m      No route to host (no-route)                                                 11[0m
+[0;32m      Flow is denied by configured rule (acl-drop)                          51923811[0m
+[0;32m      First TCP packet not SYN (tcp-not-syn)                                 5010482[0m
+[0;32m      Bad TCP flags (bad-tcp-flags)                                            28106[0m
+[0;32m      TCP data send after FIN (tcp-data-past-fin)                                 12[0m
+[0;32m      TCP failed 3 way handshake (tcp-3whs-failed)                             50220[0m
+[0;32m      TCP RST/FIN out of order (tcp-rstfin-ooo)                              1359436[0m
+[0;32m      TCP SEQ in SYN/SYNACK invalid (tcp-seq-syn-diff)                          2907[0m
+[0;32m      TCP packet SEQ past window (tcp-seq-past-win)                             9277[0m
+[0;32m      TCP invalid ACK (tcp-invalid-ack)                                           22[0m
+[0;32m      TCP RST/SYN in window (tcp-rst-syn-in-win)                                 266[0m
+[0;32m      TCP packet failed PAWS test (tcp-paws-fail)                                316[0m
+[0;32m      Connection limit reached (conn-limit)                                       16[0m
+[0;32m      CTM returned error (ctm-error)                                               8[0m
+[0;32m      Slowpath security checks failed (sp-security-failed)                      1152[0m
+[0;32m      Dropped by standby unit (fo-standby)                                     66148[0m
+[0;32m      Dst MAC L2 Lookup Failed (dst-l2_lookup-fail)                             6000[0m
+[0;32m      L2 Src/Dst same LAN port (l2_same-lan-port)                                  9[0m
+[0;32m      ICMP Inspect bad icmp code (inspect-icmp-bad-code)                           3[0m
+[0;32m      ICMP Inspect seq num not matched (inspect-icmp-seq-num-not-matched)          9[0m
+[0;32m      ICMP Error Inspect no existing conn (inspect-icmp-error-no-existing-conn)                                   234[0m
+[0;32m      FP L2 rule drop (l2_acl)                                               2532431[0m
+[0;32m      Unable to obtain connection lock (connection-lock)                           4[0m
+[0;32m      Interface is down (interface-down)                                         209[0m
+[0;32m      No management IP address configured for TFW (tfw-no-mgmt-ip-config)         14[0m
+[0;32m      Dropped pending packets in a closed socket (np-socket-closed)              419[0m
+[0;32m      IPv6 slowpath security checks failed (ipv6-sp-security-failed)               3[0m
+[0;32m      Connection to PAT address without pre-existing xlate (nat-no-xlate-to-pat-pool)                           23004[0m
+[0;32m      Received a multicast packet in the non-active device (mcast-in-nonactive-device)                            631[0m
+[0;32m  [0m
+[0;32m    Last clearing: Never[0m
+[0;32m  [0m
+[0;32m    Flow drop:[0m
+[0;32m      NAT reverse path failed (nat-rpf-failed)                                 34544[0m
+[0;32m      Inspection failure (inspect-fail)                                      2438126[0m
+[0;32m      SSL bad record detected (ssl-bad-record-detect)                             40[0m
+[0;32m      SSL handshake failed (ssl-handshake-failed)                                301[0m
+[0;32m      SSL record decryption failed (ssl-record-decrypt-error)                      8[0m
+[0;32m  [0m
+[0;32m    Last clearing: Never[0m
+[0;32m    sjc02-wxqa-asa01/Core#[0m
+
+TASK [ops_show_svc_policy : SHOW SERVICE POLICY APPLIED(FROM NSO)] ****************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_svc_policy/tasks/main.yml:3[0m
+[0;33mchanged: [localhost] => changed=true [0m
+[0;33m  output:[0m
+[0;33m    result: |2-[0m
+[0;33m  [0m
+[0;33m  [0m
+[0;33m      Global policy:[0m
+[0;33m        Service-policy: global_policy[0m
+[0;33m          Class-map: inspection_default[0m
+[0;33m            Inspect: dns preset_dns_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: ftp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: h323 h225 _default_h323_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m                     tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;33m            Inspect: h323 ras _default_h323_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: ip-options _default_ip_options_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: netbios, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: rsh, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: rtsp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m                     tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;33m            Inspect: skinny , packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m                     tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;33m            Inspect: esmtp _default_esmtp_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: sqlnet, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: sunrpc, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m                     tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;33m            Inspect: tftp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m            Inspect: sip , packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m                     tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;33m            Inspect: xdmcp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;33m      sjc02-wxqa-asa01/Management#[0m
+
+TASK [ops_show_svc_policy : debug] ************************************************************************************************************
+[1;30mtask path: /Users/akbansal/NSO/nso_ansible_qa/nso-ans-qa-wkbk/roles/ops_show_svc_policy/tasks/main.yml:12[0m
+[0;32mok: [localhost] => [0m
+[0;32m  nso_results7.output.result: |2-[0m
+[0;32m  [0m
+[0;32m  [0m
+[0;32m    Global policy:[0m
+[0;32m      Service-policy: global_policy[0m
+[0;32m        Class-map: inspection_default[0m
+[0;32m          Inspect: dns preset_dns_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: ftp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: h323 h225 _default_h323_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m                   tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;32m          Inspect: h323 ras _default_h323_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: ip-options _default_ip_options_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: netbios, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: rsh, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: rtsp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m                   tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;32m          Inspect: skinny , packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m                   tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;32m          Inspect: esmtp _default_esmtp_map, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: sqlnet, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: sunrpc, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m                   tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;32m          Inspect: tftp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m          Inspect: sip , packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m                   tcp-proxy: bytes in buffer 0, bytes dropped 0[0m
+[0;32m          Inspect: xdmcp, packet 0, lock fail 0, drop 0, reset-drop 0, 5-min-pkt-rate 0 pkts/sec, v6-fail-close 0 sctp-drop-override 0[0m
+[0;32m    sjc02-wxqa-asa01/Management#[0m
+[0;34mMETA: ran handlers[0m
+[0;34mMETA: ran handlers[0m
+
+PLAY RECAP ************************************************************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=16  [0m [0;33mchanged=7   [0m unreachable=0    failed=0   
+
+AKBANSAL-M-R0GA:nso-ans-qa-wkbk akbansal$ 
