@@ -13,7 +13,7 @@
   debug:  
     var: nso_results2.output.result
 
-#NOT NEEDED AFTER CHANGING THE ANSIBLE CONFIG DEFAULT OUTPUT FORMAT TO YAML
+#NOT NEEDED AFTER CHANGING THE ANSIBLE.CFG DEFAULT OUTPUT FORMAT TO YAML
 #- name: CONVERTING AVAILABLE CONTEXTS ON ASA TO YAML
 #  set_fact:
 #    contexts: "{{ nso_results2.output | to_nice_yaml(indent=2) }}"
