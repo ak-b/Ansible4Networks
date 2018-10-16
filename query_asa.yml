@@ -1,5 +1,5 @@
 ---
-- name: EXTRACT EXISTING ASA CONFIGURATION FROM NSO AND RECORD
+- name: RUNNING HEALTH-CHECK COMMANDS FROM NSO 
   hosts: 
     - localhost
   gather_facts: no
