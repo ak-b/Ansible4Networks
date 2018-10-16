@@ -1,0 +1,28 @@
+---
+# tasks file for ops_show_context
+- name: SHOW CONTEXT FROM NSO
+  nso_action:
+    url: "{{nso.nso_url}}"
+    username: "{{nso.nso_username}}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/show'
+    input: {args: ["context"]}
+  register: nso_results2
+
+- name: DEBUG LISTED CONTEXTS ON ASA(FROM NSO)
+  debug:  
+    var: nso_results2.output.result
+
+- name: CONVERTING AVAILABLE CONTEXTS ON ASA TO YAML
+  set_fact:
+    contexts: "{{ nso_results2.output | to_nice_yaml(indent=2) }}"
+
+- name: WRITE THE EXTRACTED CONTEXT INFORMATION TO FILE 
+  copy:
+    content: "{{contexts}}" 
+    dest: "./host_vars/context/test.yml"
+    mode: 0777
+  delegate_to: localhost
+
+#- set_fact: 
+#    asa_context: "{{ nso_results.output |from_json}}"

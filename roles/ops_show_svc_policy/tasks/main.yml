@@ -1,0 +1,13 @@
+---
+# tasks file for ops_show_svc_policy
+- name: SHOW SERVICE POLICY APPLIED(FROM NSO)
+  nso_action:
+    url: "{{ nso.nso_url}}"
+    username: "{{ nso.nso_username }}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/any'
+    input: {context: "Management", auto-prompts: [], args: ["show service-policy"]}
+  register: nso_results7
+
+- debug: 
+    var: nso_results7.output.result

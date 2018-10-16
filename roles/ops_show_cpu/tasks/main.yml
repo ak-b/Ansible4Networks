@@ -1,0 +1,13 @@
+---
+# tasks file for ops_show_cpu
+- name: SHOW CPU FROM NSO 
+  nso_action:
+    url: "{{ nso.nso_url}}"
+    username: "{{ nso.nso_username }}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/show'
+    input: {args: ["cpu"]}
+  register: nso_results1
+
+- debug: 
+    var: nso_results1.output
