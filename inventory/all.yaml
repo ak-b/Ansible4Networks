@@ -1,0 +1,8 @@
+---
+all:
+  children:
+    controller:
+      hosts:
+        localhost:
+          ansible_connection: local
+    nso-qa-lab:

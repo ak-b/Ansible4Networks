@@ -1,0 +1,242 @@
+---
+nso-qa-lab:
+  children:
+    nso-qa-rs:
+      hosts:
+        sjc02-wxqa-csw01.webex.com:
+          inventory_name: 'sjc02-wxqa-csw01.webex.com'
+          ansible_host: '10.252.239.2'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'csw'
+
+        sjc02-wxqa-csw02.webex.com:
+          inventory_name: 'sjc02-wxqa-csw02.webex.com'
+          ansible_host: '10.252.239.3'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'csw'
+
+        sjc02-wxqa-lbsw01.webex.com:
+          inventory_name: 'sjc02-wxqa-lbsw01.webex.com'
+          ansible_host: '10.252.239.6'
+          ansible_network_os: 'ios'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'lb'
+
+        sjc02-wxqa-lbsw02.webex.com:
+          inventory_name: 'sjc02-wxqa-lbsw02.webex.com'
+          ansible_host: '10.252.239.7'
+          ansible_network_os: 'ios'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'lb'
+
+        sjc02-wxqa-srt01.webex.com:
+          inventory_name: 'sjc02-wxqa-srt01.webex.com'
+          ansible_host: '64.68.112.37'
+          ansible_network_os: 'ios'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'srt'
+
+        sjc02-wxqa-srt02.webex.com:
+          inventory_name: 'sjc02-wxqa-srt02.webex.com'
+          ansible_host: '64.68.112.41'
+          ansible_network_os: 'ios'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'srt'
+
+        sjc02-wxqa-sw100a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw100a.webex.com'
+          ansible_host: '10.252.238.16'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw100b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw100b.webex.com'
+          ansible_host: '10.252.238.17'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw11a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw11a.webex.com'
+          ansible_host: '10.252.238.234'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw11b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw11b.webex.com'
+          ansible_host: '10.252.238.235'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw12a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw12a.webex.com'
+          ansible_host: '10.252.238.238'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw12b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw12b.webex.com'
+          ansible_host: '10.252.238.236'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw13a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw13a.webex.com'
+          ansible_host: '10.252.238.38'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw13b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw13b.webex.com'
+          ansible_host: '10.252.238.21'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw14a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw14a.webex.com'
+          ansible_host: '10.252.238.241'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw14b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw14b.webex.com'
+          ansible_host: '10.252.238.243'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw15a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw15a.webex.com'
+          ansible_host: '10.252.238.6'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw15b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw15b.webex.com'
+          ansible_host: '10.252.238.7'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw16a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw16a.webex.com'
+          ansible_host: '10.252.238.23'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw16b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw16b.webex.com'
+          ansible_host: '10.252.238.24'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw17a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw17a.webex.com'
+          ansible_host: '10.252.238.25'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw17b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw17b.webex.com'
+          ansible_host: '10.252.238.26'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw18a.webex.com:
+          inventory_name: 'sjc02-wxqa-sw18a.webex.com'
+          ansible_host: '10.252.238.14'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+        sjc02-wxqa-sw18b.webex.com:
+          inventory_name: 'sjc02-wxqa-sw18b.webex.com'
+          ansible_host: '10.252.238.15'
+          ansible_network_os: 'nxos'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'sw'
+
+    nso-qa-asa:
+      hosts:
+        sjc02-wxqa-asa01a.webex.com:
+          inventory_name: 'sjc02-wxqa-asa01a.webex.com'
+          ansible_host: '10.100.26.6'
+          ansible_network_os: 'asa'
+          mgmt_int_name: 'mgmt'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'fw'
+
+        sjc02-wxqa-asa01b.webex.com:
+          inventory_name: 'sjc02-wxqa-asa01b.webex.com'
+          ansible_host: '10.100.26.7'
+          ansible_network_os: 'asa'
+          mgmt_int_name: 'mgmt'
+          region: 'amer'
+          datacenter: 'sjc02'
+          stack: 'qa'
+          role: 'fw'
