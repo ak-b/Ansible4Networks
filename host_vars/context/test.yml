@@ -1,0 +1,19 @@
+result: |2-
+
+  Context Name      Class                Interfaces           Mode         URL
+  *Management       default              Management0/0        Transparent  disk0:/Management
+   Infra2           default              TenGigabitEthernet0/6.900, Transparent  disk0:/infra2.cfg
+                                         TenGigabitEthernet0/7.901
+   OpenStackPOC     default              TenGigabitEthernet0/6.1500, Transparent  disk0:/openstackpoc.cfg
+                                         TenGigabitEthernet0/7.1501
+   MediaQA          default              TenGigabitEthernet0/6.1600, Transparent  disk0:/MediaQA.cfg
+                                         TenGigabitEthernet0/7.1601
+   Tricon           default              TenGigabitEthernet0/6.201, Transparent  disk0:/Tricon.cfg
+                                         TenGigabitEthernet0/7.202
+   Core             default              TenGigabitEthernet0/6.101, Transparent  disk0:/Core.cfg
+                                         TenGigabitEthernet0/7.102
+   dc-mgmt          default              TenGigabitEthernet0/6.3900, Transparent  disk0:/dc-mgmt.cfg
+                                         TenGigabitEthernet0/7.3901
+
+  Total active Security Contexts: 7
+  sjc02-wxqa-asa01#
