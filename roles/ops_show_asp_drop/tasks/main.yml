@@ -8,7 +8,14 @@
     password: "{{ nso.nso_api_password }}"
     path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/any'
     input: {context: "Core", auto-prompts: [], args: ["show asp drop"]}
+  loop:
+    - Infra2
+    - OpenStackPOC
+    - MediaQA
+    - Tricon
+    - Core
+    - dc-mgmt
   register: nso_results6
 
 - debug: 
-    var: nso_results6.output.result
+    var: nso_results6
