@@ -7,6 +7,8 @@
 - name: this is a test
   set_fact: inp={{ asa_conf.stdout }}
 
-- debug:  
-    var: item
+- name: Write out contexts in ASA
+  lineinfile :
+    dest: './host_vars/context/extracted_context.yml'
+    line: "{{ item }}"
   loop: "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
