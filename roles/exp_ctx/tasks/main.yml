@@ -1,9 +1,12 @@
 ---
 # tasks file for exp_ctx
 - name: Read ASA config file in JSON format
-  shell: cat ./host_vars/sjc02-wxqa-asa01a.webex.com/nso_t_sjc02-wxqa-asa01a.webex.com.json
+  shell: cat "./host_vars/sjc02-wxqa-asa01a.webex.com/context_sjc02-wxqa-asa01a.webex.com.json"
   register: asa_conf
 
+- name: this is a test
+  set_fact: inp={{ asa_conf.stdout }}
+
 - debug:  
-    var: "{{ item }}"
-  with_items: "{{ asa_conf.stdout }} | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') "
+    var: item
+  loop: "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
