@@ -1,14 +1,13 @@
 ---
-# tasks file for exp_ctx
-- name: Read ASA config file in JSON format
-  shell: cat "./host_vars/sjc02-wxqa-asa01a.webex.com/context_sjc02-wxqa-asa01a.webex.com.json"
-  register: asa_conf
+- name: LOAD "qa_lab_hosts" VAR WITH A LIST OF LAB HOSTS
+  set_fact:
+    qa_lab_hosts: "{{ groups['nso-qa-asa'] }}"
+  register: qa_lab_hosts
 
-- name: this is a test
-  set_fact: inp={{ asa_conf.stdout }}
+- name: GATHER / UPDATE CONFIGS FROM THE FOLLOWING DEVICES
+  debug:
+    var: qa_lab_hosts
 
-- name: Write out contexts in ASA
-  lineinfile :
-    dest: './host_vars/context/extracted_context.yml'
-    line: "{{ item }}"
-  loop: "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
+- name: LOOP over included tasks
+  include_tasks: write_contexts.yml
+  loop: "{{ qa_lab_hosts }}"
