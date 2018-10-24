@@ -1,0 +1,10 @@
+---
+- name: EXTRACTING ASA HOST VARS (CONTEXT) from NSO CONFIG
+  hosts:
+    - localhost
+  gather_facts: no
+  connection: local
+
+  roles:
+    - maint_get_device_config
+    - exp_ctx
