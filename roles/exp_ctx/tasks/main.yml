@@ -4,11 +4,28 @@
   shell: cat "./host_vars/sjc02-wxqa-asa01a.webex.com/context_sjc02-wxqa-asa01a.webex.com.json"
   register: asa_conf
 
-- name: this is a test
+- name: STORE CONFIG IN A VARIABLE
   set_fact: inp={{ asa_conf.stdout }}
 
-- name: Write out contexts in ASA
+- name: OUTER LOOP VARIABLE "qa_lab_hosts" VAR WITH A LIST OF LAB HOSTS
+  set_fact:
+    qa_lab_hosts: "{{ groups['nso-qa-asa'] }}"
+  register: qa_lab_hosts
+
+- name: CREATE a FILE to WRITE CONTEXTS for EACH ASA
+  file:
+    path: "./host_vars/{{item.0}}/extracted_context.yml"
+    state: touch
+    mode: 0777
+  with_nested: 
+  - "{{ qa_lab_hosts }}"
+  - "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
+  delegate_to: localhost
+
+- name: WRITE CONTEXTS TO FILE
   lineinfile :
-    dest: './host_vars/context/extracted_context.yml'
-    line: "{{ item }}"
-  loop: "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
+    dest: './host_vars/{{item.0}}/extracted_context.yml'
+    line: "{{ item.1 }}"
+  with_nested: 
+    - "{{ qa_lab_hosts }}"
+    - "{{ inp | json_query('\"tailf-ncs:devices\".device[0].config.\"tailf-ned-cisco-asa:changeto\".context[].\"context-name\"') }} "
