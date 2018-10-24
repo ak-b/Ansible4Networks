@@ -5,8 +5,13 @@ A brief description of the role goes here.
 
 Requirements
 ------------
+Fixed nested loop issues
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- used include_tasks to loop over context extraction [outer loop]
+- used loop_control to override outer loop and run inner loop[ for individual context ]
+- use set_fact to store registered config in another variable because if not done the file gets appended with the entire config+extracted query
+- "with_nested" doesn't work because the ASA config doesn't get registered as a array 
+- have to use the lineinfile module because otherwise the content(individual context) gets "replaced" instead of being "appended"
 
 Role Variables
 --------------
