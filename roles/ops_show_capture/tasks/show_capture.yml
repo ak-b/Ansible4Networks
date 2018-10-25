@@ -1,0 +1,17 @@
+---
+- name: SHOW CAPTURE FROM NSO
+  nso_action:
+    url: "{{ nso.nso_url}}"
+    username: "{{ nso.nso_username }}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{"{{item}}"}/live-status/asa-stats:exec/any'
+    input: {context: "{{ctx_item}}", auto-prompts: [], args: ["show capture"]}
+  with_lines: 
+    - cat "./host_vars/{{item}}/extracted_context.yml"
+  loop_control:
+    loop_var: ctx_item  
+
+  register: nso_results4
+
+- debug: 
+    var: nso_results4

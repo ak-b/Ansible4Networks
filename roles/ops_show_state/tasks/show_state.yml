@@ -1,0 +1,13 @@
+---
+# tasks file for ops_show_state
+- name: SHOW FAILOVER STATE FROM NSO
+  nso_action:
+    url: "{{ nso.nso_url}}"
+    username: "{{ nso.nso_username }}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{"{{item}}"}/live-status/asa-stats:exec/show'
+    input: {args: ["failover state"]}
+  register: nso_results1
+
+- debug: 
+    var: nso_results1.output.result

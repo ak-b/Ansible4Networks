@@ -1,21 +1,10 @@
 ---
-# tasks file for ops_show_asp_drop
+# tasks file for ops_show_capture
+- name: LOAD "qa_lab_hosts" VAR WITH A LIST OF LAB HOSTS
+  set_fact:
+    qa_lab_hosts: "{{ groups['nso-qa-asa'] }}"
+  register: qa_lab_hosts
 
-- name: SHOW ASP DROP INFORMATION FROM NSO
-  nso_action:
-    url: "{{ nso.nso_url}}"
-    username: "{{ nso.nso_username }}"
-    password: "{{ nso.nso_api_password }}"
-    path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/any'
-    input: {context: "{{ item }}", auto-prompts: [], args: ["show asp drop"]}
-  loop:
-    - Infra2
-    - OpenStackPOC
-    - MediaQA
-    - Tricon
-    - Core
-    - dc-mgmt
-  register: nso_results6
-
-- debug: 
-    var: nso_results6
+- name: LOOP over included tasks
+  include_tasks: show_asp.yml
+  loop: "{{ qa_lab_hosts }}"

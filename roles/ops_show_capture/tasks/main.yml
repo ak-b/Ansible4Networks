@@ -1,21 +1,10 @@
 ---
 # tasks file for ops_show_capture
-- name: SHOW CAPTURE INFORMATION FROM NSO
-  nso_action:
-    url: "{{ nso.nso_url}}"
-    username: "{{ nso.nso_username }}"
-    password: "{{ nso.nso_api_password }}"
-    path: '/ncs:devices/device{sjc02-wxqa-asa01a.webex.com}/live-status/asa-stats:exec/any'
-    input: {context: "{{ item }}", auto-prompts: [], args: ["show capture"]}
-  loop:
-    - Infra2
-    - OpenStackPOC
-    - MediaQA
-    - Tricon
-    - Core
-    - dc-mgmt
+- name: LOAD "qa_lab_hosts" VAR WITH A LIST OF LAB HOSTS
+  set_fact:
+    qa_lab_hosts: "{{ groups['nso-qa-asa'] }}"
+  register: qa_lab_hosts
 
-  register: nso_results5
-
-- debug: 
-    var: nso_results5
+- name: LOOP over included tasks
+  include_tasks: show_capture.yml
+  loop: "{{ qa_lab_hosts }}"

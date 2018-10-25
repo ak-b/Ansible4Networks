@@ -1,0 +1,13 @@
+---
+# tasks file for ops_show_cpu
+- name: SHOW CPU FROM NSO 
+  nso_action:
+    url: "{{ nso.nso_url}}"
+    username: "{{ nso.nso_username }}"
+    password: "{{ nso.nso_api_password }}"
+    path: '/ncs:devices/device{"{{item}}"}/live-status/asa-stats:exec/show'
+    input: {args: ["cpu"]}
+  register: nso_results3
+
+- debug: 
+    var: nso_results3.output
