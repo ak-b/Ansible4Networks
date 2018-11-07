@@ -6,9 +6,9 @@
   connection: local
 
   roles: 
-    - ops_show_state
-    - ops_show_block 
-    - ops_show_cpu
-    - ops_show_capture
-    - ops_show_asp_drop
-    - ops_show_svc_policy
+    - { role: ops_show_state }
+    - { role: ops_show_block }
+    - { role: ops_show_cpu }
+    - { role: ops_show_capture }
+    - { role: ops_show_asp_drop }
+    - { role: ops_show_svc_policy }
