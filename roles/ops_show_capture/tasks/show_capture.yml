@@ -11,7 +11,8 @@
   loop_control:
     loop_var: ctx_item  
 
-  register: nso_results4
+  register: nso_results4 
+  changed_when: False
 
 - debug: 
     var: nso_results4

@@ -8,6 +8,7 @@
     path: '/ncs:devices/device{"{{item}}"}/live-status/asa-stats:exec/show'
     input: {args: ["cpu"]}
   register: nso_results3
+  changed_when: False
 
 - debug: 
     var: nso_results3.output

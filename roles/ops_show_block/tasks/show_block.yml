@@ -12,6 +12,7 @@
     loop_var: ctx_item  
 
   register: nso_results2
+  changed_when: False
 
 - debug: 
     var: nso_results2
