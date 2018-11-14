@@ -1,0 +1,10 @@
+---
+# tasks file for ops_show_version
+- name: LOAD "qa_lab_hosts" VAR WITH A LIST OF LAB HOSTS
+  set_fact:
+    qa_lab_hosts: "{{ groups['nso-qa-asa'] }}"
+  register: qa_lab_hosts
+
+- name: LOOP over included tasks
+  include_tasks: show_version.yml
+  loop: "{{ qa_lab_hosts }}"
