@@ -1,0 +1,10 @@
+---
+- name: SOFTWARE UPGRADE ON CISCO ASA devices
+  hosts:
+    - localhost
+  gather_facts: no
+  connection: local
+
+  roles:
+    - ops_show_version
+...
